@@ -38,11 +38,20 @@ const invoice = {
         return `Hola ${this.client.name} tu pedido se encuentra en camino`
     }
 };
-//invoice.client.name ='Paul',
-//invoice.client = 'Hugo Rojas';
-//invoice.total = 15000;
-console.log(invoice);
 
-const greeting = invoice.greeting();
-console.log(greeting);
-console.log('Total: '+invoice.total());
+//const invoice2 = invoice;
+
+const invoice2 = { ...invoice};
+
+const result = invoice === invoice2;
+
+if (result) {
+    console.log('Si son igualitos mano')
+}else {
+    console.log('no son iguales');
+}
+console.log(result);
+
+invoice2.id = 20;
+console.log(invoice.id);
+console.log(invoice2.id);
